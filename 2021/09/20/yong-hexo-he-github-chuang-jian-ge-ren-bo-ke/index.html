@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="codeing, 若你困于无风之地">
+    <meta name="keywords" content="用hexo和github创建个人博客, 若你困于无风之地">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>codeing | 若你困于无风之地</title>
+    <title>用hexo和github创建个人博客 | 若你困于无风之地</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">codeing</h1>
+                    <h1 class="description center-align post-title">用hexo和github创建个人博客</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-19
+                    2021-09-20
                 </div>
                 
 
@@ -469,7 +482,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>马上就准备好了</p>
+                <p>前言：做博客的时候重复了好多好多遍，重装过三次电脑，不过好在在师傅们的帮助下，最后还是部署完成了，这个博客和我的电脑可谓是命途多舛，现在来回顾一下这个过程。某些步骤在文件夹中配置失败时可以尝试在全局配置，更换命令或命令控制工具等办法进行解决。也可以借助百度、CSDN等途径找到解决方案。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>在搭建Github x hexo 博客之前，先准备一下必要的环境。</p>
+<h3 id="（1）安装git"><a href="#（1）安装git" class="headerlink" title="（1）安装git"></a>（1）安装git</h3><hr>
+<p>1.可以百度官网或者用电脑管家直接下载，一路next即可，完成安装（当然可以修改安装目录）<br>2.安装好之后，鼠标右键出现：git bash here 即安装成功。<br>3.可以通过在cmd或者git来检查安装是否成功，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p>出现 x.xx.x.windows.x 即为成功。</p>
+<h3 id="（2）安装node-js"><a href="#（2）安装node-js" class="headerlink" title="（2）安装node.js"></a>（2）安装node.js</h3><hr>
+<p>1.同样可以百度找到官网，这里我用的是稳定版（node-v16.9.1 -64x.msi），点击下载后会直接跳转到下载页面下载就行。<br>2.之后运行安装向导，几次next后，出现一个页面“tools for native modules”，下面有个待勾选项目，英文的大致意思是是否允许其自动安装必备的程序，这里我勾选了，然后进行下一步。<br>3.安装结束后会弹出Windows powershell来安装必备程序，结束后会自己消失。<br>4.在cmd或git输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>出现版本号即为成功。<br>注：笔者在此处曾出现过多次报错，可以尝试完全删除后重新下载，切记，下载的目标文件夹在此之后不能改名字，不然会影响往后的部署。</p>
+<hr>
+<h3 id="（3）添加国内镜像"><a href="#（3）添加国内镜像" class="headerlink" title="（3）添加国内镜像"></a>（3）添加国内镜像</h3><hr>
+<p>淘宝源是个不错的选择，解决了npm可能不可用的问题（使用淘宝源以后的配置中，代码的npm换成cnpm即可）。<br>注：此时换源之前仍然使用npm</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="（4）注册GitHub账号"><a href="#（4）注册GitHub账号" class="headerlink" title="（4）注册GitHub账号"></a>（4）注册GitHub账号</h3><hr>
+<p>1.如果没有GitHub账号的话我们需要注册一个，用来存放我们的网站，网址为：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a> 。点击右上角的sign up，按照提示进行注册即可。<br>2.现在我们有了一个github账号，进入后点击右上角加号，点击New repository，创建一个新的仓库。<br>3.然后在repository name输入自己的项目名字，后面一定要加.github.io后缀，README初始化也要勾上。名称一定要和你的github名字完全一样，比如你github名字叫abc，那么仓库名字一定要是abc.github.io。<br>4.点击页面最下面的绿色方块，建成仓库。<br>5.在点击仓库界面中点击settings，向下拉有个github pages，点击蓝字进入，点击change theme选择并更改主题，之后可以输入abc.github.io(abc是你的github名字)，出现自己的网页。</p>
+<hr>
+<h3 id="（5）安装hexo"><a href="#（5）安装hexo" class="headerlink" title="（5）安装hexo"></a>（5）安装hexo</h3><hr>
+<p>1.在合适的地方新建一个文件夹，用来存放自己的博客文件，我的在E:\blog<br>在该文件夹中右键点击git bash here ，打开git窗口，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo -g</span><br></pre></td></tr></table></figure>
+<p>测试是否成功，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<p>出现几行内容都是x.x.x的格式没有报错即成功<br>2.在git输入hexo init初始化文件夹，接着输入cnpm install安装必备的组件<br>3.输入hexo g 生成静态网站，输入hexo s 打开本地服务器，然后根据git窗口中的提示打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E3%80%82">http://localhost:4000/，即可看到自己的博客。</a><br>按ctrl+c关闭本地服务器</p>
+<hr>
+<h3 id="（6）链接github与本地"><a href="#（6）链接github与本地" class="headerlink" title="（6）链接github与本地"></a>（6）链接github与本地</h3><p>1.打开git窗口输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;你的电子邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<p>可以分别输入git config –global user.name ，git config –global user.email 检查输入结果是否正确<br>2.生成ssh key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的电子邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<p>3.打开github，在头像旁边的下拉菜单点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个就行。<br>4.在git窗口输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>将其中输出的内容复制到框中，点击确定后保存。</p>
+<p>5.输入ssh -T <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>，连续三次回车，如果出现你的用户名，证明成功了。<br>6.打开博客根目录下的_config.yml文件（笔者直接用的记事本），修改最后一行的配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    <span class="built_in">type</span>: git</span><br><span class="line">    repository: https://github.com/BardVendi/BardVendi.github.io</span><br><span class="line">    branch: main</span><br></pre></td></tr></table></figure>
+<p>注意：看看自己github的branch是main还是master，repository修改为你自己的github项目地址。</p>
+<h3 id="（7）写文章、发布文章"><a href="#（7）写文章、发布文章" class="headerlink" title="（7）写文章、发布文章"></a>（7）写文章、发布文章</h3><hr>
+<p>1.在博客根目录下右键打开git bash，进入git窗口，安装一个hexo依赖 npm install –save hexo-deployer-git。<br>2.输入hexo new post “article title”，新建一篇文章。<br>3.打开你的博客目录下blog\source_posts的目录，.md即为文章文件，<br>编写完 .md 文件后，博客根目录下输入hexo g生成静态网页，然后输入hexo s可以本地预览效果，最后输入hexo d上传到github上。<br>4.打开你的xxx.github.io的网页即可看到你的网页。</p>
+<hr>
+<h3 id="（8）关于matery主题"><a href="#（8）关于matery主题" class="headerlink" title="（8）关于matery主题"></a>（8）关于matery主题</h3><hr>
+<p>详见：<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a> ，大佬已经对主题的配置讲解地比较详细</p>
+<hr>
+<h3 id="（9）致谢"><a href="#（9）致谢" class="headerlink" title="（9）致谢"></a>（9）致谢</h3><hr>
+<p>感谢各位师傅的帮助，经过一周的不断调整，解决了一个又一个报错的问题，博客在各位的帮助下才得以成功，再次感谢各位师傅，也将其放入了友情链接之中。</p>
+<hr>
+<h3 id="（10）关于问题的解决"><a href="#（10）关于问题的解决" class="headerlink" title="（10）关于问题的解决"></a>（10）关于问题的解决</h3><hr>
+<p>百度，CSDN，他人博客，身边同学和前辈都是良师益友，部分参考资料如下：<br><a target="_blank" rel="noopener" href="https://godweiyang.com/2018/04/13/hexo-blog/">https://godweiyang.com/2018/04/13/hexo-blog/</a><br><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chenlove/p/15058170.html">https://www.cnblogs.com/chenlove/p/15058170.html</a></p>
+<hr>
 
                 
             </div>
@@ -496,7 +555,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://bardvendi.github.io/2021/09/19/jiu-kuai-zhun-bei-hao-liao/">https://bardvendi.github.io/2021/09/19/jiu-kuai-zhun-bei-hao-liao/</a>
+                    <a href="https://bardvendi.github.io/2021/09/20/yong-hexo-he-github-chuang-jian-ge-ren-bo-ke/">https://bardvendi.github.io/2021/09/20/yong-hexo-he-github-chuang-jian-ge-ren-bo-ke/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,7 +592,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -701,9 +764,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/20/yong-hexo-he-github-chuang-jian-ge-ren-bo-ke/">
                     <div class="card-image">
@@ -721,9 +785,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -736,6 +800,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -754,13 +819,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/17/article-title-2/">
+                <a href="/2021/09/19/jiu-kuai-zhun-bei-hao-liao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="article title 2">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="codeing">
                         
-                        <span class="card-title">article title 2</span>
+                        <span class="card-title">codeing</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -771,7 +836,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
                             </span>
                         <span class="publish-author">
                             
