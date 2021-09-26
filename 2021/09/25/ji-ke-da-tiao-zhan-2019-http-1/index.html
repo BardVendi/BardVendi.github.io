@@ -486,7 +486,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="BUUCTF-极客大挑战-2019-Http1"><a href="#BUUCTF-极客大挑战-2019-Http1" class="headerlink" title="BUUCTF [极客大挑战 2019]Http1"></a>BUUCTF [极客大挑战 2019]Http1</h2><p>题目给我分配到的主机是</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">http:&#x2F;&#x2F;node4.buuoj.cn:28352&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">http:&#x2F;&#x2F;node4.buuoj.cn:26591&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>打开链接之后是一个网站，里面什么也点不了，让人有点茫然。<br><img src="https://z3.ax1x.com/2021/09/25/4yA5IU.png"></p>
 <hr>
 <p>不妨先使用Ctrl+U看一下源代码<br>在57行和58行之间找到了”Secret.php”，点击进去会出现一个新的页面<br><img src="https://z3.ax1x.com/2021/09/26/46WUHS.png"><br>告诉我们网页要来自<a target="_blank" rel="noopener" href="https://www.sycsecret.com/">https://www.Sycsecret.com</a><br>然后打开bp进行抓包，在repeater界面的raw中加入Referer: <a target="_blank" rel="noopener" href="https://www.sycsecret.com/">https://www.Sycsecret.com</a><br><img src="https://z3.ax1x.com/2021/09/26/4cCfO0.png"><br>告诉我们要用Syclover进入，所以把User-Agent行改为</p>
