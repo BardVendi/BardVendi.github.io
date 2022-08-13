@@ -508,7 +508,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm install hexo -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>测试是否成功，输入：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>出现几行内容都是x.x.x的格式没有报错即成功<br>2.在git输入hexo init初始化文件夹，接着输入cnpm install安装必备的组件<br>3.输入hexo g 生成静态网站，输入hexo s 打开本地服务器，然后根据git窗口中的提示打开<a target="_blank" rel="noopener" href="http://localhost:4000/%EF%BC%8C%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E3%80%82">http://localhost:4000/，即可看到自己的博客。</a><br>按ctrl+c关闭本地服务器</p>
+<p>出现几行内容都是x.x.x的格式没有报错即成功<br>2.在git输入hexo init初始化文件夹，接着输入cnpm install安装必备的组件<br>3.输入hexo g 生成静态网站，输入hexo s 打开本地服务器，然后根据git窗口中的提示打开<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a>     即可看到自己的博客。<br>按ctrl+c关闭本地服务器</p>
 <hr>
 <h3 id="（6）链接github与本地"><a href="#（6）链接github与本地" class="headerlink" title="（6）链接github与本地"></a>（6）链接github与本地</h3><p>1.打开git窗口输入</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git config --global user.name &quot;你的用户名&quot;
@@ -518,7 +518,7 @@ git config --global user.email &quot;你的电子邮箱&quot;<span aria-hidden="
 <p>3.打开github，在头像旁边的下拉菜单点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便取一个就行。<br>4.在git窗口输入：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cat ~&#x2F;.ssh&#x2F;id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>将其中输出的内容复制到框中，点击确定后保存。</p>
-<p>5.输入ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a>，连续三次回车，如果出现你的用户名，证明成功了。<br>6.打开博客根目录下的_config.yml文件（笔者直接用的记事本），修改最后一行的配置：</p>
+<p>5.输入ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a>，连续三次回车，如果出现你的用户名，证明成功了。<br>6.打开博客根目录下的_config.yml文件（笔者直接用的记事本），修改最后一行的配置：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">deploy:
     type: git
     repository: https:&#x2F;&#x2F;github.com&#x2F;BardVendi&#x2F;BardVendi.github.io
@@ -821,16 +821,16 @@ git config --global user.email &quot;你的电子邮箱&quot;<span aria-hidden="
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/19/jiu-kuai-zhun-bei-hao-liao/">
+                <a href="/2021/09/20/yong-hexo-he-github-chuang-jian-ge-ren-bo-ke/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="codeing">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="用hexo和github创建个人博客">
                         
-                        <span class="card-title">codeing</span>
+                        <span class="card-title">用hexo和github创建个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -841,15 +841,28 @@ git config --global user.email &quot;你的电子邮箱&quot;<span aria-hidden="
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            杯装之诗
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
                 </div>
                 
             </div>
